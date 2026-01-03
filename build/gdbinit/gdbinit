@@ -1,0 +1,2 @@
+source /Users/phil/phil/esp/esp32-temperature-controller/build/gdbinit/symbols
+source /Users/phil/phil/esp/esp32-temperature-controller/build/gdbinit/connect

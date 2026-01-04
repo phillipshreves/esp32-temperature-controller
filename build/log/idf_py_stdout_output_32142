@@ -1,0 +1,51 @@
+Command: ninja all
+[0/1] Re-running CMake...
+-- Minimal build - ON
+-- Building ESP-IDF components for target esp32
+NOTICE: Manifest files have changed, solving dependencies.
+.....NOTICE: Updating lock file at /Users/phil/phil/esp/esp32-temperature-controller/dependencies.lock
+NOTICE: Processing 3 dependencies:
+NOTICE: [1/3] espressif/ds18b20 (0.2.0)
+NOTICE: [2/3] espressif/onewire_bus (1.0.4)
+NOTICE: [3/3] idf (5.5.2)
+-- ESP-TEE is currently supported only on the esp32c6;esp32h2;esp32c5 SoCs
+-- Project sdkconfig file /Users/phil/phil/esp/esp32-temperature-controller/sdkconfig
+-- Compiler supported targets: 
+  Registered Targets:
+    riscv32 - 32-bit RISC-V
+    riscv64 - 64-bit RISC-V
+    xtensa  - Xtensa 32
+
+-- App "esp32_temperature_controller" version: 06c5597-dirty
+-- Adding linker script /Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/esp_system/ld/sections.ld.in
+-- Adding linker script /Users/phil/phil/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /Users/phil/phil/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /Users/phil/phil/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /Users/phil/phil/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script /Users/phil/phil/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script /Users/phil/phil/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libc-funcs.ld
+-- Adding linker script /Users/phil/phil/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-reent-funcs.ld
+-- Adding linker script /Users/phil/phil/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Components: app_update bootloader bootloader_support cxx efuse esp_app_format esp_bootloader_format esp_coex esp_common esp_driver_bitscrambler esp_driver_gpio esp_driver_rmt esp_driver_uart esp_driver_usb_serial_jtag esp_event esp_hw_support esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_ringbuf esp_rom esp_security esp_system esp_timer esp_vfs_console esp_wifi espressif__ds18b20 espressif__onewire_bus esptool_py freertos hal heap log lwip main mbedtls newlib nvs_flash partition_table pthread soc spi_flash vfs wpa_supplicant xtensa
+-- Component paths: /Users/phil/phil/esp/esp-idf/components/app_update /Users/phil/phil/esp/esp-idf/components/bootloader /Users/phil/phil/esp/esp-idf/components/bootloader_support /Users/phil/phil/esp/esp-idf/components/cxx /Users/phil/phil/esp/esp-idf/components/efuse /Users/phil/phil/esp/esp-idf/components/esp_app_format /Users/phil/phil/esp/esp-idf/components/esp_bootloader_format /Users/phil/phil/esp/esp-idf/components/esp_coex /Users/phil/phil/esp/esp-idf/components/esp_common /Users/phil/phil/esp/esp-idf/components/esp_driver_bitscrambler /Users/phil/phil/esp/esp-idf/components/esp_driver_gpio /Users/phil/phil/esp/esp-idf/components/esp_driver_rmt /Users/phil/phil/esp/esp-idf/components/esp_driver_uart /Users/phil/phil/esp/esp-idf/components/esp_driver_usb_serial_jtag /Users/phil/phil/esp/esp-idf/components/esp_event /Users/phil/phil/esp/esp-idf/components/esp_hw_support /Users/phil/phil/esp/esp-idf/components/esp_mm /Users/phil/phil/esp/esp-idf/components/esp_netif /Users/phil/phil/esp/esp-idf/components/esp_netif_stack /Users/phil/phil/esp/esp-idf/components/esp_partition /Users/phil/phil/esp/esp-idf/components/esp_phy /Users/phil/phil/esp/esp-idf/components/esp_pm /Users/phil/phil/esp/esp-idf/components/esp_ringbuf /Users/phil/phil/esp/esp-idf/components/esp_rom /Users/phil/phil/esp/esp-idf/components/esp_security /Users/phil/phil/esp/esp-idf/components/esp_system /Users/phil/phil/esp/esp-idf/components/esp_timer /Users/phil/phil/esp/esp-idf/components/esp_vfs_console /Users/phil/phil/esp/esp-idf/components/esp_wifi /Users/phil/phil/esp/esp32-temperature-controller/managed_components/espressif__ds18b20 /Users/phil/phil/esp/esp32-temperature-controller/managed_components/espressif__onewire_bus /Users/phil/phil/esp/esp-idf/components/esptool_py /Users/phil/phil/esp/esp-idf/components/freertos /Users/phil/phil/esp/esp-idf/components/hal /Users/phil/phil/esp/esp-idf/components/heap /Users/phil/phil/esp/esp-idf/components/log /Users/phil/phil/esp/esp-idf/components/lwip /Users/phil/phil/esp/esp32-temperature-controller/main /Users/phil/phil/esp/esp-idf/components/mbedtls /Users/phil/phil/esp/esp-idf/components/newlib /Users/phil/phil/esp/esp-idf/components/nvs_flash /Users/phil/phil/esp/esp-idf/components/partition_table /Users/phil/phil/esp/esp-idf/components/pthread /Users/phil/phil/esp/esp-idf/components/soc /Users/phil/phil/esp/esp-idf/components/spi_flash /Users/phil/phil/esp/esp-idf/components/vfs /Users/phil/phil/esp/esp-idf/components/wpa_supplicant /Users/phil/phil/esp/esp-idf/components/xtensa
+-- Configuring done (2.1s)
+-- Generating done (0.2s)
+-- Build files have been written to: /Users/phil/phil/esp/esp32-temperature-controller/build
+[1/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+[2/10] Linking C static library esp-idf/main/libmain.a
+[3/10] Performing build step for 'bootloader'
+[1/1] cd /Users/phil/phil/esp/esp32-temperature-controller/build/bootloader/esp-idf/esptool_py && /Users/phil/.espressif/python_env/idf5.5_py3.14_env/bin/python /Users/phil/phil/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/phil/phil/esp/esp32-temperature-controller/build/bootloader/bootloader.bin
+Bootloader binary size 0x66c0 bytes. 0x940 bytes (8%) free.
+[4/10] No install step for 'bootloader'
+[5/10] Completed 'bootloader'
+[6/10] Generating esp-idf/esp_system/ld/sections.ld
+[7/10] Linking CXX executable esp32_temperature_controller.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.11.dev1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /Users/phil/phil/esp/esp32-temperature-controller/build/esp32_temperature_controller.bin
+[9/10] cd /Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/esptool_py && /Users/phil/.espressif/python_env/idf5.5_py3.14_env/bin/python /Users/phil/phil/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/phil/phil/esp/esp32-temperature-controller/build/partition_table/partition-table.bin /Users/phil/phil/esp/esp32-temperature-controller/build/esp32_temperature_controller.bin
+esp32_temperature_controller.bin binary size 0x2cdb0 bytes. Smallest app partition is 0x100000 bytes. 0xd3250 bytes (82%) free.

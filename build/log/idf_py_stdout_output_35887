@@ -1,0 +1,71 @@
+Command: /Users/phil/.espressif/python_env/idf5.5_py3.14_env/bin/python /Users/phil/phil/esp/esp-idf/tools/idf_monitor.py -p /dev/cu.usbserial-0001 -b 115200 --toolchain-prefix  --target esp32 --revision 0 /Users/phil/phil/esp/esp32-temperature-controller/build/esp32_temperature_controller.elf /Users/phil/phil/esp/esp32-temperature-controller/build/bootloader/bootloader.elf -m '/Users/phil/.espressif/python_env/idf5.5_py3.14_env/bin/python' '/Users/phil/phil/esp/esp-idf/tools/idf.py' '-p' '/dev/cu.usbserial-0001'
+(31) boot.esp32: SPI Speed      : 40MHz
+[0;32mI (35) boot.esp32: SPI Mode  b�����           Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000ets Jun  8 2016 00:22:57[0m
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6384
+load:0x40078000,len:15916
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jan  3 2026 20:09:18[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v1.0[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0e2e4h ( 58084) map[0m
+[0;32mI (106) esp_image: segment 1: paddr=0001e30c vaddr=3ffb0000 size=01d0ch (  7436) load[0m
+[0;32mI (109) esp_image: segment 2: paddr=00020020 vaddr=400d0020 size=16430h ( 91184) map[0m
+[0;32mI (141) esp_image: segment 3: paddr=00036458 vaddr=3ffb1d0c size=00950h (  2384) load[0m
+[0;32mI (142) esp_image: segment 4: paddr=00036db0 vaddr=40080000 size=0eca8h ( 60584) load[0m
+[0;32mI (168) esp_image: segment 5: paddr=00045a60 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (176) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (176) boot: Disabling RNG early entropy source...[0m
+[0;32mI (186) cpu_start: Multicore app[0m
+[0;32mI (195) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (195) cpu_start: Pro cpu start user code[0m
+[0;32mI (195) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (197) app_init: Application information:[0m
+[0;32mI (201) app_init: Project name:     esp32_temperature_controller[0m
+[0;32mI (206) app_init: App version:      06c5597-dirty[0m
+[0;32mI (211) app_init: Compile time:     Jan  3 2026 22:32:29[0m
+[0;32mI (216) app_init: ELF file SHA256:  a4c5f5108...[0m
+[0;32mI (220) app_init: ESP-IDF:          v5.5.2[0m
+[0;32mI (224) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (228) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (232) efuse_init: Chip rev:         v1.0[0m
+[0;32mI (236) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (242) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (247) heap_init: At 3FFB2F20 len 0002D0E0 (180 KiB): DRAM[0m
+[0;32mI (252) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (258) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (263) heap_init: At 4008ECA8 len 00011358 (68 KiB): IRAM[0m
+[0;32mI (270) spi_flash: detected chip: generic[0m
+[0;32mI (272) spi_flash: flash io: dio[0m
+[0;33mW (275) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (288) main_task: Started on CPU0[0m
+[0;32mI (298) main_task: Calling app_main()[0m
+[0;32mI (298) DS18B20_EXAMPLE: Device iterator created, start searching...[0m
+[0;32mI (408) DS18B20_EXAMPLE: Found a DS18B20{0], address B026440087425528[0m
+[0;32mI (408) DS18B20_EXAMPLE: Searching done, 1 DS18B20 device(s) found[0m
+[0;32mI (1218) DS18B20_EXAMPLE: Temperature read from DS18B20[0]: 19.38C[0m
+[0;32mI (5028) DS18B20_EXAMPLE: Temperature read from DS18B20[0]: 19.38C[0m
+[0;32mI (8838) DS18B20_EXAMPLE: Temperature read from DS18B20[0]: 19.38C[0m
+[0;32mI (12648) DS18B20_EXAMPLE: Temperature read from DS18B20[0]: 19.38C[0m
+[0;32mI (16458) DS18B20_EXAMPLE: Temperature read from DS18B20[0]: 19.62C[0m
+[0;32mI (20268) DS18B20_EXAMPLE: Temperature read from DS18B20[0]: 22.25C[0m
+[0;32mI (24078) DS18B20_EXAMPLE: Temperature read from DS18B20[0]: 24.31C[0m
+[0;32mI (27888) DS18B20_EXAMPLE: Temperature read from DS18B20[0]: 24.94C[0m

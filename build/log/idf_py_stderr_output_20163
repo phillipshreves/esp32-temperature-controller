@@ -1,0 +1,22 @@
+Command: /Users/phil/.espressif/python_env/idf5.5_py3.14_env/bin/python /Users/phil/phil/esp/esp-idf/tools/idf_monitor.py -p /dev/cu.usbserial-0001 -b 115200 --toolchain-prefix  --target esp32 --revision 0 /Users/phil/phil/esp/esp32-temperature-controller/build/esp32_temperature_controller.elf /Users/phil/phil/esp/esp32-temperature-controller/build/bootloader/bootloader.elf -m '/Users/phil/.espressif/python_env/idf5.5_py3.14_env/bin/python' '/Users/phil/phil/esp/esp-idf/tools/idf.py' '-p' '/dev/cu.usbserial-0001'
+[0;33m--- esp-idf-monitor 1.8.0 on /dev/cu.usbserial-0001 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[1;31maddr2line -fiaC -e /Users/phil/phil/esp/esp32-temperature-controller/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'addr2line'[0m
+[1;31maddr2line -fiaC -e /Users/phil/phil/esp/esp32-temperature-controller/build/esp32_temperature_controller.elf 0x40080400: [Errno 2] No such file or directory: 'addr2line'[0m
+[1;31maddr2line -fiaC -e /Users/phil/phil/esp/esp32-temperature-controller/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'addr2line'[0m
+[1;31maddr2line -fiaC -e /Users/phil/phil/esp/esp32-temperature-controller/build/esp32_temperature_controller.elf 0x40080644: [Errno 2] No such file or directory: 'addr2line'[0m
+[1;31maddr2line -fiaC -e /Users/phil/phil/esp/esp32-temperature-controller/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'addr2line'[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is 4ab56aeb1ccc32effbf90a241f29171b470a2eeb064841949c81510f596715f3[0m
+[1;31maddr2line -fiaC -e /Users/phil/phil/esp/esp32-temperature-controller/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'addr2line'[0m
+[1;31maddr2line -fiaC -e /Users/phil/phil/esp/esp32-temperature-controller/build/esp32_temperature_controller.elf 0x40080400: [Errno 2] No such file or directory: 'addr2line'[0m
+[1;31maddr2line -fiaC -e /Users/phil/phil/esp/esp32-temperature-controller/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'addr2line'[0m
+[1;31maddr2line -fiaC -e /Users/phil/phil/esp/esp32-temperature-controller/build/esp32_temperature_controller.elf 0x40080644: [Errno 2] No such file or directory: 'addr2line'[0m
+[1;31maddr2line -fiaC -e /Users/phil/phil/esp/esp32-temperature-controller/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'addr2line'[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is 4ab56aeb1ccc32effbf90a241f29171b470a2eeb064841949c81510f596715f3[0m
+[1;31maddr2line -fiaC -e /Users/phil/phil/esp/esp32-temperature-controller/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'addr2line'[0m
+[1;31maddr2line -fiaC -e /Users/phil/phil/esp/esp32-temperature-controller/build/esp32_temperature_controller.elf 0x40080400: [Errno 2] No such file or directory: 'addr2line'[0m
+[1;31maddr2line -fiaC -e /Users/phil/phil/esp/esp32-temperature-controller/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'addr2line'[0m
+[1;31maddr2line -fiaC -e /Users/phil/phil/esp/esp32-temperature-controller/build/esp32_temperature_controller.elf 0x40080644: [Errno 2] No such file or directory: 'addr2line'[0m
+[1;31maddr2line -fiaC -e /Users/phil/phil/esp/esp32-temperature-controller/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'addr2line'[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is 4ab56aeb1ccc32effbf90a241f29171b470a2eeb064841949c81510f596715f3[0m
+[0m

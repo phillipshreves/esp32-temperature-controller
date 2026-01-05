@@ -35,10 +35,12 @@
 /Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/app_update/libapp_update.a
 /Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/esp_app_format/libesp_app_format.a
 /Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/esp_bootloader_format/libesp_bootloader_format.a
+/Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/esp_http_server/libesp_http_server.a
+/Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/http_parser/libhttp_parser.a
+/Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/esp_event/libesp_event.a
 /Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/nvs_flash/libnvs_flash.a
 /Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/mbedtls/libmbedtls.a
 /Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/esp_wifi/libesp_wifi.a
-/Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/esp_event/libesp_event.a
 /Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/esp_phy/libesp_phy.a
 /Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/esp_netif/libesp_netif.a
 /Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/wpa_supplicant/libwpa_supplicant.a
@@ -79,6 +81,8 @@
 /Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/wpa_supplicant/libwpa_supplicant.a
 /Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/esp_coex/libesp_coex.a
 /Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/esp_wifi/libesp_wifi.a
+/Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/http_parser/libhttp_parser.a
+/Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/esp_http_server/libesp_http_server.a
 /Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/esp_driver_rmt/libesp_driver_rmt.a
 /Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/espressif__onewire_bus/libespressif__onewire_bus.a
 /Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/esp_driver_rmt/libesp_driver_rmt.a

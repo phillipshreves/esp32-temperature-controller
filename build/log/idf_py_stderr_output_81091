@@ -1,0 +1,34 @@
+Command: /Users/phil/.espressif/python_env/idf5.5_py3.14_env/bin/python /Users/phil/phil/esp/esp-idf/tools/idf_monitor.py -p /dev/cu.usbserial-0001 -b 115200 --toolchain-prefix  --target esp32 --revision 0 /Users/phil/phil/esp/esp32-temperature-controller/build/esp32_temperature_controller.elf /Users/phil/phil/esp/esp32-temperature-controller/build/bootloader/bootloader.elf -m '/Users/phil/.espressif/python_env/idf5.5_py3.14_env/bin/python' '/Users/phil/phil/esp/esp-idf/tools/idf.py'
+[0;33m--- esp-idf-monitor 1.8.0 on /dev/cu.usbserial-0001 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+thread 'main' panicked at 'assertion failed: `(left == right)`
+  left: `"addr2line"`,
+ right: `"xtensa"`: Called tool must have pattern "xtensa-esp*-elf-*"', main.rs:111:18
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[1;31maddr2line -fiaC -e /Users/phil/phil/esp/esp32-temperature-controller/build/bootloader/bootloader.elf 0x40078000: Command '['addr2line', '-fiaC', '-e', '/Users/phil/phil/esp/esp32-temperature-controller/build/bootloader/bootloader.elf', '0x40078000']' returned non-zero exit status 101.[0m
+[1;31mELF file is missing or has changed, the build folder was probably modified.[0m
+thread 'main' panicked at 'assertion failed: `(left == right)`
+  left: `"addr2line"`,
+ right: `"xtensa"`: Called tool must have pattern "xtensa-esp*-elf-*"', main.rs:111:18
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[1;31maddr2line -fiaC -e /Users/phil/phil/esp/esp32-temperature-controller/build/esp32_temperature_controller.elf 0x40080400: Command '['addr2line', '-fiaC', '-e', '/Users/phil/phil/esp/esp32-temperature-controller/build/esp32_temperature_controller.elf', '0x40080400']' returned non-zero exit status 101.[0m
+[1;31mELF file is missing or has changed, the build folder was probably modified.[0m
+thread 'main' panicked at 'assertion failed: `(left == right)`
+  left: `"addr2line"`,
+ right: `"xtensa"`: Called tool must have pattern "xtensa-esp*-elf-*"', main.rs:111:18
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[1;31maddr2line -fiaC -e /Users/phil/phil/esp/esp32-temperature-controller/build/bootloader/bootloader.elf 0x40080400: Command '['addr2line', '-fiaC', '-e', '/Users/phil/phil/esp/esp32-temperature-controller/build/bootloader/bootloader.elf', '0x40080400']' returned non-zero exit status 101.[0m
+[1;31mELF file is missing or has changed, the build folder was probably modified.[0m
+thread 'main' panicked at 'assertion failed: `(left == right)`
+  left: `"addr2line"`,
+ right: `"xtensa"`: Called tool must have pattern "xtensa-esp*-elf-*"', main.rs:111:18
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[1;31maddr2line -fiaC -e /Users/phil/phil/esp/esp32-temperature-controller/build/esp32_temperature_controller.elf 0x40080644: Command '['addr2line', '-fiaC', '-e', '/Users/phil/phil/esp/esp32-temperature-controller/build/esp32_temperature_controller.elf', '0x40080644']' returned non-zero exit status 101.[0m
+[1;31mELF file is missing or has changed, the build folder was probably modified.[0m
+thread 'main' panicked at 'assertion failed: `(left == right)`
+  left: `"addr2line"`,
+ right: `"xtensa"`: Called tool must have pattern "xtensa-esp*-elf-*"', main.rs:111:18
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[1;31maddr2line -fiaC -e /Users/phil/phil/esp/esp32-temperature-controller/build/bootloader/bootloader.elf 0x40080644: Command '['addr2line', '-fiaC', '-e', '/Users/phil/phil/esp/esp32-temperature-controller/build/bootloader/bootloader.elf', '0x40080644']' returned non-zero exit status 101.[0m
+[1;31mELF file is missing or has changed, the build folder was probably modified.[0m
+[0m

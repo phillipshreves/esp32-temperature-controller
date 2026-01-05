@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "esp32_temperature_controller",
-    "project_version":    "06c5597-dirty",
+    "project_version":    "b0aeb17-dirty",
     "project_path":       "/Users/phil/phil/esp/esp32-temperature-controller",
     "idf_path":           "/Users/phil/phil/esp/esp-idf",
     "build_dir":          "/Users/phil/phil/esp/esp32-temperature-controller/build",
@@ -21,12 +21,12 @@
     "monitor_toolprefix": "",
     "c_compiler":         "/Users/phil/.espressif/tools/esp-clang/esp-19.1.2_20250312/esp-clang/bin/clang",
     "config_environment" : {
-        "COMPONENT_KCONFIGS" : "/Users/phil/phil/esp/esp-idf/components/efuse/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_coex/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_common/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_driver_bitscrambler/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_driver_gpio/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_driver_rmt/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_driver_uart/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_driver_usb_serial_jtag/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_event/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_hw_support/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_mm/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_netif/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_partition/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_phy/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_pm/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_ringbuf/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_rom/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_security/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_system/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_timer/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_wifi/Kconfig;/Users/phil/phil/esp/esp-idf/components/freertos/Kconfig;/Users/phil/phil/esp/esp-idf/components/hal/Kconfig;/Users/phil/phil/esp/esp-idf/components/heap/Kconfig;/Users/phil/phil/esp/esp-idf/components/log/Kconfig;/Users/phil/phil/esp/esp-idf/components/lwip/Kconfig;/Users/phil/phil/esp/esp-idf/components/mbedtls/Kconfig;/Users/phil/phil/esp/esp-idf/components/newlib/Kconfig;/Users/phil/phil/esp/esp-idf/components/nvs_flash/Kconfig;/Users/phil/phil/esp/esp-idf/components/pthread/Kconfig;/Users/phil/phil/esp/esp-idf/components/soc/Kconfig;/Users/phil/phil/esp/esp-idf/components/spi_flash/Kconfig;/Users/phil/phil/esp/esp-idf/components/vfs/Kconfig",
+        "COMPONENT_KCONFIGS" : "/Users/phil/phil/esp/esp-idf/components/efuse/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_coex/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_common/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_driver_bitscrambler/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_driver_gpio/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_driver_rmt/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_driver_uart/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_driver_usb_serial_jtag/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_event/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_http_server/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_hw_support/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_mm/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_netif/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_partition/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_phy/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_pm/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_ringbuf/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_rom/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_security/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_system/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_timer/Kconfig;/Users/phil/phil/esp/esp-idf/components/esp_wifi/Kconfig;/Users/phil/phil/esp/esp-idf/components/freertos/Kconfig;/Users/phil/phil/esp/esp-idf/components/hal/Kconfig;/Users/phil/phil/esp/esp-idf/components/heap/Kconfig;/Users/phil/phil/esp/esp-idf/components/log/Kconfig;/Users/phil/phil/esp/esp-idf/components/lwip/Kconfig;/Users/phil/phil/esp/esp-idf/components/mbedtls/Kconfig;/Users/phil/phil/esp/esp-idf/components/newlib/Kconfig;/Users/phil/phil/esp/esp-idf/components/nvs_flash/Kconfig;/Users/phil/phil/esp/esp-idf/components/pthread/Kconfig;/Users/phil/phil/esp/esp-idf/components/soc/Kconfig;/Users/phil/phil/esp/esp-idf/components/spi_flash/Kconfig;/Users/phil/phil/esp/esp-idf/components/vfs/Kconfig",
         "COMPONENT_KCONFIGS_PROJBUILD" : "/Users/phil/phil/esp/esp-idf/components/bootloader/Kconfig.projbuild;/Users/phil/phil/esp/esp-idf/components/esp_app_format/Kconfig.projbuild;/Users/phil/phil/esp/esp-idf/components/esp_rom/Kconfig.projbuild;/Users/phil/phil/esp/esp-idf/components/esptool_py/Kconfig.projbuild;/Users/phil/phil/esp/esp-idf/components/partition_table/Kconfig.projbuild"
     },
     "common_component_reqs": [ "cxx", "newlib", "freertos", "esp_hw_support", "heap", "log", "soc", "hal", "esp_rom", "esp_common", "esp_system", "xtensa" ],
-    "build_components" : [ "app_update", "bootloader", "bootloader_support", "cxx", "efuse", "esp_app_format", "esp_bootloader_format", "esp_coex", "esp_common", "esp_driver_bitscrambler", "esp_driver_gpio", "esp_driver_rmt", "esp_driver_uart", "esp_driver_usb_serial_jtag", "esp_event", "esp_hw_support", "esp_mm", "esp_netif", "esp_netif_stack", "esp_partition", "esp_phy", "esp_pm", "esp_ringbuf", "esp_rom", "esp_security", "esp_system", "esp_timer", "esp_vfs_console", "esp_wifi", "espressif__ds18b20", "espressif__onewire_bus", "esptool_py", "freertos", "hal", "heap", "log", "lwip", "main", "mbedtls", "newlib", "nvs_flash", "partition_table", "pthread", "soc", "spi_flash", "vfs", "wpa_supplicant", "xtensa", "" ],
-    "build_component_paths" : [ "/Users/phil/phil/esp/esp-idf/components/app_update", "/Users/phil/phil/esp/esp-idf/components/bootloader", "/Users/phil/phil/esp/esp-idf/components/bootloader_support", "/Users/phil/phil/esp/esp-idf/components/cxx", "/Users/phil/phil/esp/esp-idf/components/efuse", "/Users/phil/phil/esp/esp-idf/components/esp_app_format", "/Users/phil/phil/esp/esp-idf/components/esp_bootloader_format", "/Users/phil/phil/esp/esp-idf/components/esp_coex", "/Users/phil/phil/esp/esp-idf/components/esp_common", "/Users/phil/phil/esp/esp-idf/components/esp_driver_bitscrambler", "/Users/phil/phil/esp/esp-idf/components/esp_driver_gpio", "/Users/phil/phil/esp/esp-idf/components/esp_driver_rmt", "/Users/phil/phil/esp/esp-idf/components/esp_driver_uart", "/Users/phil/phil/esp/esp-idf/components/esp_driver_usb_serial_jtag", "/Users/phil/phil/esp/esp-idf/components/esp_event", "/Users/phil/phil/esp/esp-idf/components/esp_hw_support", "/Users/phil/phil/esp/esp-idf/components/esp_mm", "/Users/phil/phil/esp/esp-idf/components/esp_netif", "/Users/phil/phil/esp/esp-idf/components/esp_netif_stack", "/Users/phil/phil/esp/esp-idf/components/esp_partition", "/Users/phil/phil/esp/esp-idf/components/esp_phy", "/Users/phil/phil/esp/esp-idf/components/esp_pm", "/Users/phil/phil/esp/esp-idf/components/esp_ringbuf", "/Users/phil/phil/esp/esp-idf/components/esp_rom", "/Users/phil/phil/esp/esp-idf/components/esp_security", "/Users/phil/phil/esp/esp-idf/components/esp_system", "/Users/phil/phil/esp/esp-idf/components/esp_timer", "/Users/phil/phil/esp/esp-idf/components/esp_vfs_console", "/Users/phil/phil/esp/esp-idf/components/esp_wifi", "/Users/phil/phil/esp/esp32-temperature-controller/managed_components/espressif__ds18b20", "/Users/phil/phil/esp/esp32-temperature-controller/managed_components/espressif__onewire_bus", "/Users/phil/phil/esp/esp-idf/components/esptool_py", "/Users/phil/phil/esp/esp-idf/components/freertos", "/Users/phil/phil/esp/esp-idf/components/hal", "/Users/phil/phil/esp/esp-idf/components/heap", "/Users/phil/phil/esp/esp-idf/components/log", "/Users/phil/phil/esp/esp-idf/components/lwip", "/Users/phil/phil/esp/esp32-temperature-controller/main", "/Users/phil/phil/esp/esp-idf/components/mbedtls", "/Users/phil/phil/esp/esp-idf/components/newlib", "/Users/phil/phil/esp/esp-idf/components/nvs_flash", "/Users/phil/phil/esp/esp-idf/components/partition_table", "/Users/phil/phil/esp/esp-idf/components/pthread", "/Users/phil/phil/esp/esp-idf/components/soc", "/Users/phil/phil/esp/esp-idf/components/spi_flash", "/Users/phil/phil/esp/esp-idf/components/vfs", "/Users/phil/phil/esp/esp-idf/components/wpa_supplicant", "/Users/phil/phil/esp/esp-idf/components/xtensa", "" ],
+    "build_components" : [ "app_update", "bootloader", "bootloader_support", "cxx", "efuse", "esp_app_format", "esp_bootloader_format", "esp_coex", "esp_common", "esp_driver_bitscrambler", "esp_driver_gpio", "esp_driver_rmt", "esp_driver_uart", "esp_driver_usb_serial_jtag", "esp_event", "esp_http_server", "esp_hw_support", "esp_mm", "esp_netif", "esp_netif_stack", "esp_partition", "esp_phy", "esp_pm", "esp_ringbuf", "esp_rom", "esp_security", "esp_system", "esp_timer", "esp_vfs_console", "esp_wifi", "espressif__ds18b20", "espressif__onewire_bus", "esptool_py", "freertos", "hal", "heap", "http_parser", "log", "lwip", "main", "mbedtls", "newlib", "nvs_flash", "partition_table", "pthread", "soc", "spi_flash", "vfs", "wpa_supplicant", "xtensa", "" ],
+    "build_component_paths" : [ "/Users/phil/phil/esp/esp-idf/components/app_update", "/Users/phil/phil/esp/esp-idf/components/bootloader", "/Users/phil/phil/esp/esp-idf/components/bootloader_support", "/Users/phil/phil/esp/esp-idf/components/cxx", "/Users/phil/phil/esp/esp-idf/components/efuse", "/Users/phil/phil/esp/esp-idf/components/esp_app_format", "/Users/phil/phil/esp/esp-idf/components/esp_bootloader_format", "/Users/phil/phil/esp/esp-idf/components/esp_coex", "/Users/phil/phil/esp/esp-idf/components/esp_common", "/Users/phil/phil/esp/esp-idf/components/esp_driver_bitscrambler", "/Users/phil/phil/esp/esp-idf/components/esp_driver_gpio", "/Users/phil/phil/esp/esp-idf/components/esp_driver_rmt", "/Users/phil/phil/esp/esp-idf/components/esp_driver_uart", "/Users/phil/phil/esp/esp-idf/components/esp_driver_usb_serial_jtag", "/Users/phil/phil/esp/esp-idf/components/esp_event", "/Users/phil/phil/esp/esp-idf/components/esp_http_server", "/Users/phil/phil/esp/esp-idf/components/esp_hw_support", "/Users/phil/phil/esp/esp-idf/components/esp_mm", "/Users/phil/phil/esp/esp-idf/components/esp_netif", "/Users/phil/phil/esp/esp-idf/components/esp_netif_stack", "/Users/phil/phil/esp/esp-idf/components/esp_partition", "/Users/phil/phil/esp/esp-idf/components/esp_phy", "/Users/phil/phil/esp/esp-idf/components/esp_pm", "/Users/phil/phil/esp/esp-idf/components/esp_ringbuf", "/Users/phil/phil/esp/esp-idf/components/esp_rom", "/Users/phil/phil/esp/esp-idf/components/esp_security", "/Users/phil/phil/esp/esp-idf/components/esp_system", "/Users/phil/phil/esp/esp-idf/components/esp_timer", "/Users/phil/phil/esp/esp-idf/components/esp_vfs_console", "/Users/phil/phil/esp/esp-idf/components/esp_wifi", "/Users/phil/phil/esp/esp32-temperature-controller/managed_components/espressif__ds18b20", "/Users/phil/phil/esp/esp32-temperature-controller/managed_components/espressif__onewire_bus", "/Users/phil/phil/esp/esp-idf/components/esptool_py", "/Users/phil/phil/esp/esp-idf/components/freertos", "/Users/phil/phil/esp/esp-idf/components/hal", "/Users/phil/phil/esp/esp-idf/components/heap", "/Users/phil/phil/esp/esp-idf/components/http_parser", "/Users/phil/phil/esp/esp-idf/components/log", "/Users/phil/phil/esp/esp-idf/components/lwip", "/Users/phil/phil/esp/esp32-temperature-controller/main", "/Users/phil/phil/esp/esp-idf/components/mbedtls", "/Users/phil/phil/esp/esp-idf/components/newlib", "/Users/phil/phil/esp/esp-idf/components/nvs_flash", "/Users/phil/phil/esp/esp-idf/components/partition_table", "/Users/phil/phil/esp/esp-idf/components/pthread", "/Users/phil/phil/esp/esp-idf/components/soc", "/Users/phil/phil/esp/esp-idf/components/spi_flash", "/Users/phil/phil/esp/esp-idf/components/vfs", "/Users/phil/phil/esp/esp-idf/components/wpa_supplicant", "/Users/phil/phil/esp/esp-idf/components/xtensa", "" ],
     "build_component_info" : {
         "app_update": {
             "alias": "idf::app_update",
@@ -251,6 +251,21 @@
             "managed_priv_reqs": [],
             "file": "/Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/esp_event/libesp_event.a",
             "sources": [ "/Users/phil/phil/esp/esp-idf/components/esp_event/default_event_loop.c", "/Users/phil/phil/esp/esp-idf/components/esp_event/esp_event.c", "/Users/phil/phil/esp/esp-idf/components/esp_event/esp_event_private.c" ],
+            "include_dirs": [ "include" ]
+        },
+        "esp_http_server": {
+            "alias": "idf::esp_http_server",
+            "target": "___idf_esp_http_server",
+            "prefix": "idf",
+            "dir": "/Users/phil/phil/esp/esp-idf/components/esp_http_server",
+            "type": "LIBRARY",
+            "lib": "__idf_esp_http_server",
+            "reqs": [ "http_parser", "esp_event" ],
+            "priv_reqs": [ "mbedtls", "lwip", "esp_timer" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/esp_http_server/libesp_http_server.a",
+            "sources": [ "/Users/phil/phil/esp/esp-idf/components/esp_http_server/src/httpd_main.c", "/Users/phil/phil/esp/esp-idf/components/esp_http_server/src/httpd_parse.c", "/Users/phil/phil/esp/esp-idf/components/esp_http_server/src/httpd_sess.c", "/Users/phil/phil/esp/esp-idf/components/esp_http_server/src/httpd_txrx.c", "/Users/phil/phil/esp/esp-idf/components/esp_http_server/src/httpd_uri.c", "/Users/phil/phil/esp/esp-idf/components/esp_http_server/src/httpd_ws.c", "/Users/phil/phil/esp/esp-idf/components/esp_http_server/src/util/ctrl_sock.c" ],
             "include_dirs": [ "include" ]
         },
         "esp_hw_support": {
@@ -553,6 +568,21 @@
             "sources": [ "/Users/phil/phil/esp/esp-idf/components/heap/heap_caps_base.c", "/Users/phil/phil/esp/esp-idf/components/heap/heap_caps.c", "/Users/phil/phil/esp/esp-idf/components/heap/heap_caps_init.c", "/Users/phil/phil/esp/esp-idf/components/heap/multi_heap.c", "/Users/phil/phil/esp/esp-idf/components/heap/tlsf/tlsf.c", "/Users/phil/phil/esp/esp-idf/components/heap/port/memory_layout_utils.c", "/Users/phil/phil/esp/esp-idf/components/heap/port/esp32/memory_layout.c" ],
             "include_dirs": [ "include", "tlsf" ]
         },
+        "http_parser": {
+            "alias": "idf::http_parser",
+            "target": "___idf_http_parser",
+            "prefix": "idf",
+            "dir": "/Users/phil/phil/esp/esp-idf/components/http_parser",
+            "type": "LIBRARY",
+            "lib": "__idf_http_parser",
+            "reqs": [],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/http_parser/libhttp_parser.a",
+            "sources": [ "/Users/phil/phil/esp/esp-idf/components/http_parser/http_parser.c" ],
+            "include_dirs": [ "." ]
+        },
         "log": {
             "alias": "idf::log",
             "target": "___idf_log",
@@ -591,7 +621,7 @@
             "type": "LIBRARY",
             "lib": "__idf_main",
             "reqs": [],
-            "priv_reqs": [ "esp_wifi", "espressif__ds18b20", "espressif__onewire_bus" ],
+            "priv_reqs": [ "esp_wifi", "esp_http_server", "espressif__ds18b20", "espressif__onewire_bus" ],
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__ds18b20", "espressif__onewire_bus" ],
             "file": "/Users/phil/phil/esp/esp32-temperature-controller/build/esp-idf/main/libmain.a",
@@ -2053,7 +2083,7 @@
             "dir": "/Users/phil/phil/esp/esp32-temperature-controller/main",
             "lib": "__idf_main",
             "reqs": [],
-            "priv_reqs": [ "esp_wifi", "espressif__ds18b20", "espressif__onewire_bus" ],
+            "priv_reqs": [ "esp_wifi", "esp_http_server", "espressif__ds18b20", "espressif__onewire_bus" ],
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__ds18b20", "espressif__onewire_bus" ],
             "include_dirs": []

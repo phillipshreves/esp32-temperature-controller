@@ -12,13 +12,13 @@
 #include "esp_http_server.h"
 #include "wifi.h"
 
+#include "secrets.h"
+
 #define TAG "MAIN"
 
 #define ONEWIRE_BUS_GPIO 4
 #define ONEWIRE_MAX_DS18B20 10
 
-#define WIFI_SSID "ENV_WIFI_SSID"
-#define WIFI_PASSWORD "ENV_WIFI_PASSWORD"
 #define WIFI_MAXIMUM_RETRY 20
 	
 #define ESP_WIFI_SAE_MODE WPA3_SAE_PWE_HASH_TO_ELEMENT

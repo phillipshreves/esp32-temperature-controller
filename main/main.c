@@ -1,13 +1,18 @@
+#include <stdio.h>
+
 #include "esp_err.h"
-#include "esp_wifi.h"
 #include "esp_log.h"
 #include "freertos/idf_additions.h"
+#include "freertos/task.h"
 #include "onewire_bus_impl_rmt.h"
 #include "onewire_device.h"
 #include "onewire_types.h"
 #include "portmacro.h"
 #include "ds18b20.h"
 #include "esp_http_server.h"
+#include "wifi.h"
+
+#define TAG "MAIN"
 
 #define ONEWIRE_BUS_GPIO 4
 #define ONEWIRE_MAX_DS18B20 10
@@ -24,7 +29,6 @@ int get_device_count(onewire_bus_handle_t bus, ds18b20_device_handle_t *ds18b20s
 	onewire_device_iter_handle_t iter = NULL;
 	onewire_device_t next_onewire_device;
 	esp_err_t search_result = ESP_OK;
-	const char *TAG = "GET_DEVICE_COUNT";
 	// create 1-wire device iterator, which is used for device search
 	ESP_ERROR_CHECK(onewire_new_device_iter(bus, &iter));
 	ESP_LOGI(TAG, "Device iterator created, start searching...");
@@ -53,7 +57,6 @@ int get_device_count(onewire_bus_handle_t bus, ds18b20_device_handle_t *ds18b20s
 }
 
 void temperature_report(ds18b20_device_handle_t ds18b20) {
-		const char *TAG = "READ_TEMPERATURE_TASK";
 		float temperature_c = 0;
 		float temperature_f = 0;
 		ESP_ERROR_CHECK(ds18b20_get_temperature(ds18b20, &temperature_c));
@@ -62,6 +65,8 @@ void temperature_report(ds18b20_device_handle_t ds18b20) {
 }
 
 void app_main(void) {
+
+	// -- START Temperature sensor setup --
 	// install 1-wire bus
 	onewire_bus_handle_t bus = NULL;
 	onewire_bus_config_t bus_config = {
@@ -76,10 +81,33 @@ void app_main(void) {
 	ESP_ERROR_CHECK(onewire_new_bus_rmt(&bus_config, &rmt_config, &bus));
 
 	ds18b20_device_handle_t ds18b20s[ONEWIRE_MAX_DS18B20];
-	const char *TAG = "MAIN";
 
 	int ds18b20_device_num = get_device_count(bus, ds18b20s);
 	ESP_LOGI(TAG, "Searching done, %d DS18B20 device(s) found", ds18b20_device_num);
+	// -- END Temperature sensor setup --
+
+ 	// -- START WiFi setup --
+	ESP_ERROR_CHECK(wifi_init());
+
+	esp_err_t wifi_result = wifi_connect(WIFI_SSID, WIFI_PASSWORD);
+	if (wifi_result != ESP_OK) {
+		ESP_LOGE(TAG, "Failed to connect to Wifi network");
+	}
+
+	wifi_ap_record_t ap_info;
+	wifi_result = esp_wifi_sta_get_ap_info(&ap_info);
+	if (wifi_result == ESP_ERR_WIFI_CONN) {
+		ESP_LOGE(TAG, "WiFi station interface not initialized");
+	} else if (wifi_result == ESP_ERR_WIFI_NOT_CONNECT) {
+		ESP_LOGE(TAG, "WiFi station is not connected");
+	} else {
+		ESP_LOGI(TAG, "--- Access Point Information ---");
+		ESP_LOG_BUFFER_HEX("MAC Address", ap_info.bssid, sizeof(ap_info.bssid));
+		ESP_LOG_BUFFER_CHAR("SSID", ap_info.ssid, sizeof(ap_info.ssid));
+		ESP_LOGI(TAG, "Primary Channel: %d", ap_info.primary);
+		ESP_LOGI(TAG, "RSSI: %d", ap_info.rssi);
+	}
+	// -- END WiFi setup --
 
 	while (ds18b20_device_num > 0) {
 		ESP_ERROR_CHECK(ds18b20_trigger_temperature_conversion_for_all(bus));
@@ -89,4 +117,8 @@ void app_main(void) {
 
 		vTaskDelay((1000*2) / portTICK_PERIOD_MS);
 	}
+
+	ESP_LOGI(TAG, "Disconnecting from Wifi...");
+	ESP_ERROR_CHECK(wifi_disconnect());
+	ESP_ERROR_CHECK(wifi_deiniter());
 }

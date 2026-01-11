@@ -12,7 +12,7 @@ _deps
 CMakeUserPresets.json
 build
 sdkconfig.old
-secrets.h
+**/secrets.h
 
 # CLion
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can

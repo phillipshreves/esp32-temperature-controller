@@ -64,6 +64,29 @@ void temperature_report(ds18b20_device_handle_t ds18b20) {
 		ESP_LOGI(TAG, "Temperature read from DS18B20: %.2f F", temperature_f);
 }
 
+void wifi_setup(void) {
+	ESP_ERROR_CHECK(wifi_init());
+
+	esp_err_t wifi_result = wifi_connect(WIFI_SSID, WIFI_PASSWORD);
+	if (wifi_result != ESP_OK) {
+		ESP_LOGE(TAG, "Failed to connect to Wifi network");
+	}
+
+	wifi_ap_record_t ap_info;
+	wifi_result = esp_wifi_sta_get_ap_info(&ap_info);
+	if (wifi_result == ESP_ERR_WIFI_CONN) {
+		ESP_LOGE(TAG, "WiFi station interface not initialized");
+	} else if (wifi_result == ESP_ERR_WIFI_NOT_CONNECT) {
+		ESP_LOGE(TAG, "WiFi station is not connected");
+	} else {
+		ESP_LOGI(TAG, "--- Access Point Information ---");
+		ESP_LOG_BUFFER_HEX("MAC Address", ap_info.bssid, sizeof(ap_info.bssid));
+		ESP_LOG_BUFFER_CHAR("SSID", ap_info.ssid, sizeof(ap_info.ssid));
+		ESP_LOGI(TAG, "Primary Channel: %d", ap_info.primary);
+		ESP_LOGI(TAG, "RSSI: %d", ap_info.rssi);
+	}
+}
+
 void app_main(void) {
 
 	// -- START Temperature sensor setup --
@@ -85,29 +108,8 @@ void app_main(void) {
 	int ds18b20_device_num = get_device_count(bus, ds18b20s);
 	ESP_LOGI(TAG, "Searching done, %d DS18B20 device(s) found", ds18b20_device_num);
 	// -- END Temperature sensor setup --
-
- 	// -- START WiFi setup --
-	ESP_ERROR_CHECK(wifi_init());
-
-	esp_err_t wifi_result = wifi_connect(WIFI_SSID, WIFI_PASSWORD);
-	if (wifi_result != ESP_OK) {
-		ESP_LOGE(TAG, "Failed to connect to Wifi network");
-	}
-
-	wifi_ap_record_t ap_info;
-	wifi_result = esp_wifi_sta_get_ap_info(&ap_info);
-	if (wifi_result == ESP_ERR_WIFI_CONN) {
-		ESP_LOGE(TAG, "WiFi station interface not initialized");
-	} else if (wifi_result == ESP_ERR_WIFI_NOT_CONNECT) {
-		ESP_LOGE(TAG, "WiFi station is not connected");
-	} else {
-		ESP_LOGI(TAG, "--- Access Point Information ---");
-		ESP_LOG_BUFFER_HEX("MAC Address", ap_info.bssid, sizeof(ap_info.bssid));
-		ESP_LOG_BUFFER_CHAR("SSID", ap_info.ssid, sizeof(ap_info.ssid));
-		ESP_LOGI(TAG, "Primary Channel: %d", ap_info.primary);
-		ESP_LOGI(TAG, "RSSI: %d", ap_info.rssi);
-	}
-	// -- END WiFi setup --
+	
+	wifi_setup();
 
 	while (ds18b20_device_num > 0) {
 		ESP_ERROR_CHECK(ds18b20_trigger_temperature_conversion_for_all(bus));

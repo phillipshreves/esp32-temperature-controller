@@ -87,11 +87,9 @@ void wifi_setup(void) {
 	}
 }
 
-void app_main(void) {
 
-	// -- START Temperature sensor setup --
+int get_temperature_sensor_count(onewire_bus_handle_t *bus, ds18b20_device_handle_t *ds18b20s) {
 	// install 1-wire bus
-	onewire_bus_handle_t bus = NULL;
 	onewire_bus_config_t bus_config = {
 		.bus_gpio_num = ONEWIRE_BUS_GPIO,
 		.flags = {
@@ -101,13 +99,20 @@ void app_main(void) {
 	onewire_bus_rmt_config_t rmt_config = {
 		.max_rx_bytes = 10, // 1byte ROM command + 8byte ROM number + 1byte device command
 	};
-	ESP_ERROR_CHECK(onewire_new_bus_rmt(&bus_config, &rmt_config, &bus));
 
+	ESP_ERROR_CHECK(onewire_new_bus_rmt(&bus_config, &rmt_config, bus));
+
+	int ds18b20_device_num = get_device_count(*bus, ds18b20s);
+	ESP_LOGI(TAG, "Searching done, %d DS18B20 device(s) found", ds18b20_device_num);
+
+	return ds18b20_device_num;
+}
+
+void app_main(void) {
+	onewire_bus_handle_t bus = NULL;
 	ds18b20_device_handle_t ds18b20s[ONEWIRE_MAX_DS18B20];
 
-	int ds18b20_device_num = get_device_count(bus, ds18b20s);
-	ESP_LOGI(TAG, "Searching done, %d DS18B20 device(s) found", ds18b20_device_num);
-	// -- END Temperature sensor setup --
+	int ds18b20_device_num = get_temperature_sensor_count(&bus, ds18b20s);
 	
 	wifi_setup();
 

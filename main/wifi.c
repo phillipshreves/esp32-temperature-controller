@@ -196,3 +196,27 @@ esp_err_t wifi_deiniter(void) {
 
 	return ESP_OK;
 }
+
+void wifi_handle_setup(char* wifi_ssid, char* wifi_password) {
+	ESP_ERROR_CHECK(wifi_init());
+
+	esp_err_t wifi_result = wifi_connect(wifi_ssid, wifi_password);
+	if (wifi_result != ESP_OK) {
+		ESP_LOGE(TAG, "Failed to connect to Wifi network");
+	}
+
+	wifi_ap_record_t ap_info;
+	wifi_result = esp_wifi_sta_get_ap_info(&ap_info);
+	if (wifi_result == ESP_ERR_WIFI_CONN) {
+		ESP_LOGE(TAG, "WiFi station interface not initialized");
+	} else if (wifi_result == ESP_ERR_WIFI_NOT_CONNECT) {
+		ESP_LOGE(TAG, "WiFi station is not connected");
+	} else {
+		ESP_LOGI(TAG, "--- Access Point Information ---");
+		ESP_LOG_BUFFER_HEX("MAC Address", ap_info.bssid, sizeof(ap_info.bssid));
+		ESP_LOG_BUFFER_CHAR("SSID", ap_info.ssid, sizeof(ap_info.ssid));
+		ESP_LOGI(TAG, "Primary Channel: %d", ap_info.primary);
+		ESP_LOGI(TAG, "RSSI: %d", ap_info.rssi);
+	}
+}
+

@@ -9,6 +9,9 @@
 #include "esp_netif_types.h"
 #include "esp_wifi.h"
 #include "esp_wifi_default.h"
+
+#include "nvs_flash.h"
+
 #include "freertos/event_groups.h"
 
 #define TAG "wifi"

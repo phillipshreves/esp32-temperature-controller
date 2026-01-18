@@ -7,12 +7,12 @@
 #include "onewire_types.h"
 #include "portmacro.h"
 #include "ds18b20.h"
-#include "esp_http_server.h"
 
 #include "consts.h"
+#include "http_client.h"
 #include "secrets.h"
-#include "wifi.h"
 #include "sensors.h"
+#include "wifi.h"
 
 #define TAG "MAIN"
 

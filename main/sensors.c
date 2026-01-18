@@ -1,12 +1,14 @@
+#include "sensors.h"
+
+#include "ds18b20.h"
+
 #include "onewire_bus_impl_rmt.h"
 #include "onewire_device.h"
 #include "onewire_types.h"
+#include "ds18b20.h"
 
-#include <stdio.h>
 #include "esp_err.h"
 #include "esp_log.h"
-#include "onewire_types.h"
-#include "ds18b20.h"
 
 #include "consts.h"
 

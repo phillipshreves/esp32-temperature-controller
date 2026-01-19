@@ -7,8 +7,9 @@
 #include "esp_http_client.h"
 #include "esp_tls.h"
 
+#include "consts.h"
+
 #define MAX_HTTP_RECV_BUFFER 512
-#define MAX_HTTP_OUTPUT_BUFFER 2048
 #define TAG "HTTP_CLIENT"
 
 esp_err_t _http_event_handler(esp_http_client_event_t *evt) {
@@ -124,32 +125,33 @@ void http_client_call(esp_http_client_config_t *config_ref) {
 	esp_http_client_cleanup(client);
 }
 
-esp_err_t http_client_get_tasmota_command_config(esp_http_client_config_t* config, const char* hostname, const char* command) {
-//http://<ip>/cm?cmnd=Power%20TOGGLE
-//http://<ip>/cm?cmnd=Power%20On
-//http://<ip>/cm?cmnd=Power%20off
-	char request_host[128];
-	char request_query[256];
-	const char* request_path = "/cm";
+esp_err_t http_client_get_tasmota_command_config(
+    esp_http_client_config_t *config,
+    const char *hostname,
+    const char *command)
+{
+    static char url[512];
 
-  const char* hostname_format = "http://%s";
-	int hostname_written = snprintf(request_host, sizeof(request_host), hostname_format, hostname);
-	if (hostname_written < 0 || hostname_written >= sizeof(request_host)) {
-		ESP_LOGW(TAG, "Truncated hostname or encoding error, hostname returned: %s", request_host);
-		return ESP_FAIL;
-	}
+    int written = snprintf(
+        url, sizeof(url),
+        "http://%s/cm?cmnd=%s",
+        hostname,
+        command
+    );
 
-  const char* query_format = "cmnd=%s";
-	int query_written = snprintf(request_query, sizeof(request_query), query_format, command);
-	if (query_written < 0 || query_written >= sizeof(request_query)) {
-		ESP_LOGW(TAG, "Truncated query or encoding error, query returned: %s", request_query);
-		return ESP_FAIL;
-	}
+    if (written < 0 || written >= sizeof(url)) {
+        ESP_LOGE(TAG, "URL truncated");
+        return ESP_FAIL;
+    }
 
-	config->host = request_host;
-	config->path = request_path;
-	config->query = request_query;
-	config->method = HTTP_METHOD_GET;
-	config->disable_auto_redirect = true;
-	return ESP_OK;
+    ESP_LOGI(TAG, "HTTP URL: %s", url);
+
+    *config = (esp_http_client_config_t) {
+        .url = url,
+        .method = HTTP_METHOD_GET,
+        .disable_auto_redirect = true,
+    };
+
+    return ESP_OK;
 }
+

@@ -221,5 +221,9 @@ void wifi_handle_setup(char* wifi_ssid, char* wifi_password) {
 		ESP_LOGI(TAG, "Primary Channel: %d", ap_info.primary);
 		ESP_LOGI(TAG, "RSSI: %d", ap_info.rssi);
 	}
+	
+	esp_netif_dns_info_t dns;
+	esp_netif_get_dns_info(wifi_netif, ESP_NETIF_DNS_MAIN, &dns);
+	ESP_LOGI(TAG, "DNS IP Address: " IPSTR, IP2STR(&dns.ip.u_addr.ip4));
 }
 

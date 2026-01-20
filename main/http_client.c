@@ -126,32 +126,48 @@ void http_client_call(esp_http_client_config_t *config_ref) {
 }
 
 esp_err_t http_client_get_tasmota_command_config(
-    esp_http_client_config_t *config,
-    const char *hostname,
-    const char *command)
-{
-    static char url[512];
+	esp_http_client_config_t *config,
+	const char *hostname,
+	const char *command
+) {
+	static char url[512];
 
-    int written = snprintf(
-        url, sizeof(url),
-        "http://%s/cm?cmnd=%s",
-        hostname,
-        command
-    );
+	int written = snprintf(
+			url, sizeof(url),
+			"http://%s/cm?cmnd=%s",
+			hostname,
+			command
+	);
 
-    if (written < 0 || written >= sizeof(url)) {
-        ESP_LOGE(TAG, "URL truncated");
-        return ESP_FAIL;
-    }
+	if (written < 0 || written >= sizeof(url)) {
+			ESP_LOGE(TAG, "URL truncated");
+			return ESP_FAIL;
+	}
 
-    ESP_LOGI(TAG, "HTTP URL: %s", url);
+	ESP_LOGI(TAG, "HTTP URL: %s", url);
 
-    *config = (esp_http_client_config_t) {
-        .url = url,
-        .method = HTTP_METHOD_GET,
-        .disable_auto_redirect = true,
-    };
+	*config = (esp_http_client_config_t) {
+			.url = url,
+			.method = HTTP_METHOD_GET,
+			.disable_auto_redirect = true,
+	};
 
-    return ESP_OK;
+	return ESP_OK;
 }
 
+void http_client_toggle_tasmota_plug(
+	esp_http_client_config_t *config,
+	char* hostname,
+	bool state
+) {
+
+	char* command;
+	if (state) {
+		command = "Power%20On";
+	} else {
+		command = "Power%20Off";
+	}
+
+	http_client_get_tasmota_command_config(config, hostname, command);
+	http_client_call(config);
+}

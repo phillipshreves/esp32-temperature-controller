@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 #include "esp_err.h"
-#include "esp_http_client.h"
 #include "esp_log.h"
 #include "freertos/idf_additions.h"
 #include "freertos/task.h"
@@ -10,7 +9,6 @@
 #include "ds18b20.h"
 
 #include "consts.h"
-#include "http_client.h"
 #include "secrets.h"
 #include "sensors.h"
 #include "wifi.h"
@@ -27,8 +25,15 @@ void app_main(void) {
 	wifi_handle_setup(WIFI_SSID, WIFI_PASSWORD);
 
 	sensors_setup_device_bus(&bus, ds18b20s);
+
+	int one_wire_retry_count = 0;
 	int ds18b20_device_num = sensors_get_device_count(&bus, ds18b20s);
-	
+	while (ds18b20_device_num == 0 && one_wire_retry_count < ONEWIRE_SEARCH_RETRY_COUNT) {
+		one_wire_retry_count++;
+		ESP_LOGW(TAG, "No DS18B20 devices found, retrying(%s)...", one_wire_retry_count);
+		vTaskDelay(ONEWIRE_SEARCH_RETRY_DELAY_MS / portTICK_PERIOD_MS);
+		ds18b20_device_num = sensors_get_device_count(&bus, ds18b20s);
+	}
 
 	while (ds18b20_device_num > 0) {
 		sensors_process_all(bus, ds18b20s, ds18b20_device_num);

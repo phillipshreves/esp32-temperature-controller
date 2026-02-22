@@ -58,8 +58,12 @@ int sensors_get_device_count(onewire_bus_handle_t *bus, ds18b20_device_handle_t 
 	} while (search_result != ESP_ERR_NOT_FOUND);
 	ESP_ERROR_CHECK(onewire_del_device_iter(iter));
 
-	ESP_LOGI(TAG, "Searching done, %d DS18B20 device(s) found", ds18b20_device_num);
+	if (ds18b20_device_num == 0) {
+		ESP_LOGW(TAG, "No DS18B20 devices found on the bus");
+		return 0;
+	}
 
+	ESP_LOGI(TAG, "Searching done, %d DS18B20 device(s) found", ds18b20_device_num);
 	return ds18b20_device_num;
 }
 

@@ -14,7 +14,7 @@
 
 #include "freertos/event_groups.h"
 
-#define TAG "wifi"
+#define TAG "WIFI"
 
 #define WIFI_AUTHMODE WIFI_AUTH_WPA2_PSK
 

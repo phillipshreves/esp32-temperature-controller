@@ -9,7 +9,6 @@
 
 #include "consts.h"
 
-#define MAX_HTTP_RECV_BUFFER 512
 #define TAG "HTTP_CLIENT"
 
 esp_err_t _http_event_handler(esp_http_client_event_t *evt) {

@@ -28,11 +28,15 @@ void app_main(void) {
 
 	int one_wire_retry_count = 0;
 	int ds18b20_device_num = sensors_get_device_count(&bus, ds18b20s);
-	while (ds18b20_device_num == 0 && one_wire_retry_count < ONEWIRE_SEARCH_RETRY_COUNT) {
-		one_wire_retry_count++;
+	while ((ds18b20_device_num == 0) && (one_wire_retry_count < ONEWIRE_SEARCH_RETRY_COUNT)) {
+		++one_wire_retry_count;
 		ESP_LOGW(TAG, "No DS18B20 devices found, retrying(%s)...", one_wire_retry_count);
 		vTaskDelay(ONEWIRE_SEARCH_RETRY_DELAY_MS / portTICK_PERIOD_MS);
 		ds18b20_device_num = sensors_get_device_count(&bus, ds18b20s);
+	}
+	if (ds18b20_device_num == 0) {
+		ESP_LOGE(TAG, "No DS18B20 devices found on the bus after %d retries, exiting...", one_wire_retry_count);
+		return;
 	}
 
 	while (ds18b20_device_num > 0) {

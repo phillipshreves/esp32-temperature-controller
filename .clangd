@@ -1,2 +1,10 @@
 CompileFlags:
   CompilationDatabase: build
+  Add:
+    - -I/Users/phil/phil/repos/esp32-temperature-controller/build/config
+    - -I/Users/phil/.espressif/tools/esp-clang/esp-19.1.2_20250312/esp-clang/lib/clang-runtimes/xtensa-esp-unknown-elf/esp32/include
+    - -I/Users/phil/.espressif/tools/esp-clang/esp-19.1.2_20250312/esp-clang/lib/clang/19/include
+  Remove:
+    - -fno-shrink-wrap
+    - -fno-tree-switch-conversion
+    - -fstrict-volatile-bitfields

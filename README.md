@@ -21,11 +21,7 @@ To use `clangd` with the ESP32 toolchain, you need to generate a `compile_comman
 idf.py -D IDF_TOOLCHAIN=clang set-target esp32
 ```
 
-Old method to configure with `clangd`, here for reference only:
-
-```
-idf.py -B build -D IDF_TOOLCHAIN=clang reconfigure
-```
+Additionally, since most lsp servers use clangd, the .clangd configuration file needs to be updated to include the correct include paths and compiler flags to eliminate header issues. 
 
 ### To Build
 
